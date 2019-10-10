@@ -15,7 +15,7 @@
     "localStorage": true,
     "fetch": true
   },
-  "root": true,
+  "reactinjectedhere": true,
   "rules": {
     "react/jsx-filename-extension": [
       1,
