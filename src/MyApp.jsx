@@ -3,6 +3,7 @@ import AppTitle from "./AppTitle";
 
 const generateArray = (n) => [...Array(n).keys()].map(x => ++x)
 const generateRandomArray = (n) => [...Array.from({length: n}, () => Math.ceil(Math.random() * 25))]
+const theArray=[2, 56, 23, 88, 17, 4]
 
 const MyApp = () => (
     <div>
@@ -14,6 +15,7 @@ const MyApp = () => (
 
         <p>{generateArray(20).map(x => ' ' + x)}</p>
         <p>{generateRandomArray(10).map(x => ' ' + x)}</p>
+        <p>{theArray.filter(x=>x>15).map(x=>' '+x)}</p>
 
     </div>
 )
