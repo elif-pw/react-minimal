@@ -1,7 +1,11 @@
 import React from 'react'
 
 const MyApp = () => (
-  <h1>Minimal React ozdemire</h1>
+    <div>
+        <h1>Minimal React ozdemire</h1>
+        <p>Bundle size: 181 bytes, <br/> Load time of the bundle:  21 ms,
+            <br/> Last commit SHA1: bc6178f3dacf5977dbefcce409dd3d3c67debe76 </p>
+    </div>
 )
 
 export default MyApp
