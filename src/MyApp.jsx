@@ -1,5 +1,8 @@
 import React from 'react'
 import AppTitle from "./AppTitle";
+
+const generateArray = (n) => [...Array(n).keys()].map(x => ++x)
+
 const MyApp = () => (
     <div>
         <h1>Minimal React ozdemire</h1>
@@ -7,6 +10,9 @@ const MyApp = () => (
             <br/> Last commit SHA1: bc6178f3dacf5977dbefcce409dd3d3c67debe76 </p>
 
          <AppTitle/>
+
+         <p>{generateArray(20).map(x => ' ' + x)}</p>
+
     </div>
 )
 
