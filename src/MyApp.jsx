@@ -161,8 +161,8 @@ class MyApp extends React.Component {
         return (
 
             <div>
-                {this.state.iter = this.state.iter + 1};
-                {console.time("Render - " + this.state.iter)};
+                <span style={{ visibility : 'hidden'}} > {this.state.iter = this.state.iter + 1}</span>
+                {console.time("Render - " + this.state.iter)}
                 <h1>LAB 2</h1>
 
                 <button onClick={this.notSortedList}>All Students</button>
@@ -181,7 +181,7 @@ class MyApp extends React.Component {
 
                 {(this.state.a < this.state.b && this.state.a > 0) &&
                 <b>{generateArray(parseInt(this.state.a, 10), parseInt(this.state.b, 10)).map(x => ' ' + x + ' ')}</b>}
-                {console.timeEnd("Render - " + this.state.iter)};
+                {console.timeEnd("Render - " + this.state.iter)}
             </div>
         )
     }
