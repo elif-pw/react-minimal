@@ -111,7 +111,8 @@ class MyApp extends React.Component {
         this.state = {
             Filtered: [],
             a: '',
-            b: ''
+            b: '',
+            iter: 0
         };
         this.onChangeA = this.onChangeA.bind(this);
         this.onChangeB = this.onChangeB.bind(this)
@@ -158,7 +159,10 @@ class MyApp extends React.Component {
 
     render() {
         return (
+
             <div>
+                {this.state.iter = this.state.iter + 1};
+                {console.time("Render - " + this.state.iter)};
                 <h1>LAB 2</h1>
 
                 <button onClick={this.notSortedList}>All Students</button>
@@ -173,15 +177,14 @@ class MyApp extends React.Component {
 
                 <br/><br/>
                 <input b={this.state.b} type="number" onChange={this.onChangeB}/>
-                 <br/><br/>
+                <br/><br/>
 
-                {(this.state.a<this.state.b && this.state.a>0) &&
-                <b>{generateArray(parseInt(this.state.a, 10),parseInt(this.state.b,10)).map(x => ' ' + x+' ')}</b>}
-
+                {(this.state.a < this.state.b && this.state.a > 0) &&
+                <b>{generateArray(parseInt(this.state.a, 10), parseInt(this.state.b, 10)).map(x => ' ' + x + ' ')}</b>}
+                {console.timeEnd("Render - " + this.state.iter)};
             </div>
         )
     }
 }
-
 
 export default MyApp
