@@ -1,10 +1,9 @@
 import React from 'react'
 import AppTitle from "./AppTitle";
 
-const generateArray = (n) => [...Array(n).keys()].map(x => ++x)
+const generateArray = (start, stop) => Array.from({ length: (stop+1 - start)}, ( _,i) => start + (i ));
+
 const generateRandomArray = (n) => [...Array.from({length: n}, () => Math.ceil(Math.random() * 25))]
-const theArray = [2, 56, 23, 88, 17, 4]
-const theOtherArray = [2, 5, 8, 10]
 
 function squareroot(arr) {
     return arr.map(function (x) {
@@ -174,6 +173,10 @@ class MyApp extends React.Component {
 
                 <br/><br/>
                 <input b={this.state.b} type="number" onChange={this.onChangeB}/>
+                 <br/><br/>
+
+                {(this.state.a<this.state.b && this.state.a>0) &&
+                <b>{generateArray(parseInt(this.state.a, 10),parseInt(this.state.b,10)).map(x => ' ' + x+' ')}</b>}
 
             </div>
         )
