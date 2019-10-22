@@ -63,7 +63,7 @@ class MyApp extends React.Component {
             if (this.state.a != null && this.state.b != null) {
                 this.setState(
                     {
-                        array: generateArray(Number(this.state.a), (Number(this.state.b))).map(x => ' ' + x + ', ')
+                        array: generateArray(Number(this.state.a), (Number(this.state.b))).toString()
                     })
             }
         })
@@ -75,7 +75,7 @@ class MyApp extends React.Component {
             if (this.state.a != null && this.state.b != null) {
                 this.setState(
                     {
-                        array: generateArray(Number(this.state.a), (Number(this.state.b))).map(x => ' ' + x + ', ')
+                        array: generateArray(Number(this.state.a), (Number(this.state.b))).toString()
                     })
             }
         })
@@ -111,7 +111,7 @@ class MyApp extends React.Component {
      ProcessArray=()=>{
         this.setState(
             {
-                array: square(generateArray(Number(this.state.a), (Number(this.state.b)))).map(x => ' ' + x + ', ')
+                array: square(generateArray(Number(this.state.a), (Number(this.state.b)))).toString()
             });
 
     }
@@ -131,12 +131,15 @@ class MyApp extends React.Component {
                 {/*<br/><br/>*/}
                 {/*<button onClick={this.FilteredList}>Old students</button>*/}
                 {/*{this.state.Filtered}*/}
-                <br/><br/>
+                <b>Input a</b>
+                <br/>
                 <input a={this.state.a} type="number" onChange={this.onChangeA}/>
                 <br/><br/>
+                <b>Input b</b>
+                <br/>
                 <input b={this.state.b} type="number" onChange={this.onChangeB}/>
                 <br/><br/>
-                {this.state.a < this.state.b && this.state.a > 0 &&this.state.array}
+                {this.state.a < this.state.b && this.state.a > 0 && <b>{this.state.array}</b>}
                 <br/><br/>
                 <button onClick={this.ProcessArray}>Process array</button>
                 <br/><br/>
